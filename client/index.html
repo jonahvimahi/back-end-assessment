@@ -4,6 +4,43 @@
     <title>Back End Assessment</title>
   </head>
   <body class="container">
+<section id="info">
+    <form id="person">
+      <h1>Who are you?</h1>
+      <input 
+          type='text'
+          id="firstName"
+          placeholder='First Name'/>
+          <input 
+              type='text'
+              id="lastName"
+              placeholder='Last Name'/>
+      <input 
+          type='text'
+          id="hobby"
+          placeholder='Favorite Hobby'/>
+      <input 
+          type='text'
+          id="goal"
+          placeholder='Your Biggest Goal in Life'/>
+      <button id="submit">Submit</button>
+    </form>
+  <script>
+    document.getElementById("submit").onclick = function () {
+      axios.get("http://localhost:4000/api/person/")
+      .then(function (response) {
+        const data = response.data;
+        document.getElementById("info").value = data
+        console.log(data)
+        alert(data)
+        
+      })
+    }
+    </script>
+</section>
+
+
+<section>
     <button id="complimentButton">Get a compliment, friend</button>
 
     
@@ -27,6 +64,48 @@
     });
   };
       </script>
+</section>
+
+<label for="quotes">Who is your favorite?</label>
+
+  <button  id="jarjar">Jar-Jar Binks</button>
+  <button id="batman">Batman</button>
+  <button id="trump">Donald Trump</button>
+
+
+<script>
+  document.getElementById("jarjar").onclick = function () {
+    axios.get("http://localhost:4000/api/jarjar/")
+    .then(function (response) {
+      const data = response.data;
+      alert(data);
+    });
+  };
+      </script>
+
+<script>
+  document.getElementById("batman").onclick = function () {
+    axios.get("http://localhost:4000/api/batman/")
+    .then(function (response) {
+      const data = response.data;
+      alert(data);
+    });
+  };
+      </script>
+
+<script>
+  document.getElementById("trump").onclick = function () {
+    axios.get("http://localhost:4000/api/trump/")
+    .then(function (response) {
+      const data = response.data;
+      alert(data);
+    });
+  };
+      </script>
+
+
+
+
   
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </body>
