@@ -3,10 +3,6 @@ const cors = require("cors");
 
 const app = express();
 
-// const firstName = document.querySelector("#firstName")
-// const lastName = document.querySelector("#lastName")
-// const hobby = document.querySelector("#hobby")
-// const goal = document.querySelector("#goal")
 
 app.use(cors());
 app.use(express.json()); // When we want to be able to accept JSON.
@@ -14,8 +10,24 @@ app.use(express.json()); // When we want to be able to accept JSON.
 
 
 app.get("/api/person/", (req, res) => {
+
+  //      const newPerson = {
+  //   firstName: firstName.value,
+  //   lastName: lastName.value,
+  //   hobby: hobby.value,
+  //   goal: goal.value,
+  // };
+
+
+  // const firstName = document.querySelector("#firstName")
+  // const lastName = document.querySelector("#lastName")
+  // const hobby = document.querySelector("#hobby")
+  // const goal = document.querySelector("#goal")
+
+
   const {firstName, lastName, hobby, goal} = req.body;
   const phrase = `What's up ${firstName} ${lastName}?? You're the best at ${hobby} you will for sure ${goal}!!`
+
 
   res.status(200).send(phrase)
 });
@@ -34,7 +46,7 @@ app.get("/api/compliment/", (req, res) => {
   
 });
 
-app.get("/api/fortune.", (req, res) => {
+app.get("/api/fortune", (req, res) => {
   const fortunes = [
     "A dubious friend may be an enemy in camoflauge",
     "It is better to deal with problems before they arise",

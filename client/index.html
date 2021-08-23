@@ -27,11 +27,11 @@
     </form>
   <script>
     document.getElementById("submit").onclick = function () {
-      axios.get("http://localhost:4000/api/person/")
+      axios.post("http://localhost:4000/api/person/")
       .then(function (response) {
-        const data = response.data;
-        document.getElementById("info").value = data
-        console.log(data)
+        document.getElementById("person").value = data
+        console.log(phrase)
+        // console.log(data)
         alert(data)
         
       })
@@ -68,7 +68,7 @@
 
 <label for="quotes">Who is your favorite?</label>
 
-  <button  id="jarjar">Jar-Jar Binks</button>
+  <button id="jarjar">Jar-Jar Binks</button>
   <button id="batman">Batman</button>
   <button id="trump">Donald Trump</button>
 
