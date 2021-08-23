@@ -106,10 +106,11 @@
 <button id="beHappy">Wanna be happy?</button>
 <script>
   document.getElementById("beHappy").onclick = function () {
-    axios.get("http://localhost:4000/api/meme/")
+    axios.post("http://localhost:4000/api/meme/")
     .then(function (response) {
       const data = response.data
-      alert(data)
+      let photo = document.createElement(p)
+      document.appendChild(photo)
     });
   };
     </script>

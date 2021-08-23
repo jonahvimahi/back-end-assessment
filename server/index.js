@@ -85,9 +85,11 @@ app.get("/api/trump/", (req, res) => {
   res.status(200).send(trumpQuote);
 });
 
-app.get("/api/meme/", (req, res) => {
+app.post("/api/meme/", (req, res) => {
   const funny = "http://apimeme.com/meme?meme=You-The-Real-MVP-2&top=When+Jonah+finally+gets+an+api+to+work&bottom="
-
+  let photo = document.createElement(p)
+  element.appendChild(photo)
   res.status(200).send(funny)
+  
 })
 app.listen(4000, () => console.log("Server running on 4000"));
